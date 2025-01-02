@@ -1,12 +1,10 @@
 import React from "react"
 
-function TitlePage() {
+function TitlePage(props) {
     return (
-      <>
         <div className="title">
-          <h1>HRnet</h1>
+          <h1>{props.title}</h1>
         </div>
-      </>
     )
   }
   
