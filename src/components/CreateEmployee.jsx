@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import TitlePage from "./TitlePage";
 import LabeledInput from "./FormElements/LabeledInput";
 import LabeledSelect from "./FormElements/LabeledSelect";
+import Example from "./formTemplate";
 
 function CreateEmployee() {
   function saveEmployee() {
@@ -44,31 +45,6 @@ function CreateEmployee() {
       <TitlePage title="HRnet" />
       <div className="container">
         <Link to="/employee-list">View Current Employees</Link>
-        <h2>Create Employee</h2>
-        <form action="#" id="create-employee">
-          <LabeledInput id="first-name" label="First Name" type="text" />
-          <LabeledInput id="last-name" label="Last Name" type="text" />
-          <LabeledInput id="date-of-birth" label="Date of Birth" type="text" />
-          <LabeledInput id="start-date" label="Start Date" type="text" />
-
-
-          <fieldset className="address">
-            <legend>Address</legend>
-            <LabeledInput id="street" label="Street" type="text" />
-            <LabeledInput id="city" label="City" type="text" />
-            <LabeledSelect name="state" id="state" label="State" />
-            <LabeledInput id="zip-code" label="Zip Code" type="number" />
-          </fieldset>
-
-          <LabeledSelect name="department" id="department" label="Department">
-            <option>Sales</option>
-            <option>Marketing</option>
-            <option>Engineering</option>
-            <option>Human Resources</option>
-            <option>Legal</option>
-          </LabeledSelect>
-        </form>
-
         <button onClick={saveEmployee}>Save</button>
       </div>
 
@@ -78,6 +54,7 @@ function CreateEmployee() {
           <span className="close" onClick={closeModal}>&times;</span>
         </div>
       </div>
+      <Example></Example>
     </>
   );
 }

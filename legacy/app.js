@@ -7,8 +7,8 @@ $( function() {
         stateSelect.appendChild(option);
     });
 
-    $( "#department" ).selectmenu();
-    $( "#state" ).selectmenu();
+    //$( "#department" ).selectmenu();
+    //$( "#state" ).selectmenu();
 
     $('#date-of-birth').datetimepicker({
         timepicker: false,
