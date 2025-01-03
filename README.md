@@ -6,8 +6,8 @@ Ce projet a pour objectif de refactoriser une application web interne de gestion
 
 ## Structure du projet
 
-● src: Contient le code source de l'application React.
-● legacy: Contient le code source original de l'application HRnet en jQuery.
+- src: Contient le code source de l'application React.
+- legacy: Contient le code source original de l'application HRnet en jQuery.
 
 Le code legacy n'est pas destiné à être exécuté directement. Il est présent à titre de référence pour la refactorisation.
 
