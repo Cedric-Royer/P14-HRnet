@@ -1,4 +1,4 @@
-import TitlePage from './TitlePage';
+import TitlePage from './components/TitlePage';
 import './App.css';
 
 function App() {
