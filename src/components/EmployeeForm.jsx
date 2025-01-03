@@ -7,31 +7,31 @@ function EmployeeForm() {
   return (
     <FormSection title="Create Employee">
       <div className="sm:col-span-3">
-        <LabeledInput id="first-name" label="First Name" type="text" />
+        <LabeledInput id="first-name" name="firstName" label="First Name" type="text" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledInput id="last-name" label="Last Name" type="text" />
+        <LabeledInput id="last-name" name="lastName" label="Last Name" type="text" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledInput id="date-of-birth" label="Date of Birth" type="text" />
+        <LabeledInput id="date-of-birth" name="dateOfBirth" label="Date of Birth" type="text" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledInput id="start-date" label="Start Date" type="text" />
+        <LabeledInput id="start-date" name="startDate" label="Start Date" type="text" />
       </div>
       <div className="col-span-full">
-        <LabeledInput id="street" label="Street" type="text" />
+        <LabeledInput id="street" name="street" label="Street" type="text" />
       </div>
       <div className="sm:col-span-2 sm:col-start-1">
-        <LabeledInput id="city" label="City" type="text" />
+        <LabeledInput id="city" name="city" label="City" type="text" />
       </div>
       <div className="sm:col-span-2">
-        <LabeledSelect name="state" id="state" label="State" />
+        <LabeledSelect  id="state" name="state" label="State" />
       </div>
       <div className="sm:col-span-2">
-        <LabeledInput id="zip-code" label="Zip Code" type="number" />
+        <LabeledInput id="zip-code" name="zipCode" label="Zip Code" type="number" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledSelect id="department" label="Department">
+        <LabeledSelect id="department" name="department" label="Department">
           <option>Sales</option>
           <option>Marketing</option>
           <option>Engineering</option>
