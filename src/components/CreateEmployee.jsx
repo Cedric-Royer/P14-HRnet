@@ -1,5 +1,6 @@
 import React from "react";
-import TitlePage from './TitlePage';
+import { Link } from "react-router-dom";
+import TitlePage from "./TitlePage";
 
 function CreateEmployee() {
   function saveEmployee() {
@@ -40,7 +41,7 @@ function CreateEmployee() {
     <>
       <TitlePage title="HRnet" />
       <div className="container">
-        <a href="./legacy/employee-list.html">View Current Employees</a>
+        <Link to="/employee-list">View Current Employees</Link>
         <h2>Create Employee</h2>
         <form action="#" id="create-employee">
           <label htmlFor="first-name">First Name</label>
@@ -95,3 +96,4 @@ function CreateEmployee() {
 }
 
 export default CreateEmployee;
+
