@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TitlePage from "./TitlePage";
+import LabeledInput from "./FormElements/LabeledInput";
 
 function CreateEmployee() {
   function saveEmployee() {
@@ -44,11 +45,9 @@ function CreateEmployee() {
         <Link to="/employee-list">View Current Employees</Link>
         <h2>Create Employee</h2>
         <form action="#" id="create-employee">
-          <label htmlFor="first-name">First Name</label>
-          <input type="text" id="first-name" />
+          <LabeledInput id="first-name" label="First Name" type="text" />
+          <LabeledInput id="last-name" label="Last Name" type="text" />
 
-          <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" />
 
           <label htmlFor="date-of-birth">Date of Birth</label>
           <input id="date-of-birth" type="text" />
