@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TitlePage from "./TitlePage";
 import LabeledInput from "./FormElements/LabeledInput";
+import LabeledSelect from "./FormElements/LabeledSelect";
 
 function CreateEmployee() {
   function saveEmployee() {
@@ -31,7 +32,7 @@ function CreateEmployee() {
     employees.push(employee);
     localStorage.setItem('employees', JSON.stringify(employees));
 
-    document.getElementById("confirmation").style.display = "block";
+    document.getElementById("confirmation").style.display = "flex";
   }
 
   function closeModal() {
@@ -47,45 +48,32 @@ function CreateEmployee() {
         <form action="#" id="create-employee">
           <LabeledInput id="first-name" label="First Name" type="text" />
           <LabeledInput id="last-name" label="Last Name" type="text" />
+          <LabeledInput id="date-of-birth" label="Date of Birth" type="text" />
+          <LabeledInput id="start-date" label="Start Date" type="text" />
 
-
-          <label htmlFor="date-of-birth">Date of Birth</label>
-          <input id="date-of-birth" type="text" />
-
-          <label htmlFor="start-date">Start Date</label>
-          <input id="start-date" type="text" />
 
           <fieldset className="address">
             <legend>Address</legend>
-
-            <label htmlFor="street">Street</label>
-            <input id="street" type="text" />
-
-            <label htmlFor="city">City</label>
-            <input id="city" type="text" />
-
-            <label htmlFor="state">State</label>
-            <select name="state" id="state"></select>
-
-            <label htmlFor="zip-code">Zip Code</label>
-            <input id="zip-code" type="number" />
+            <LabeledInput id="street" label="Street" type="text" />
+            <LabeledInput id="city" label="City" type="text" />
+            <LabeledSelect name="state" id="state" label="State" />
+            <LabeledInput id="zip-code" label="Zip Code" type="number" />
           </fieldset>
 
-          <label htmlFor="department">Department</label>
-          <select name="department" id="department">
+          <LabeledSelect name="department" id="department" label="Department">
             <option>Sales</option>
             <option>Marketing</option>
             <option>Engineering</option>
             <option>Human Resources</option>
             <option>Legal</option>
-          </select>
+          </LabeledSelect>
         </form>
 
         <button onClick={saveEmployee}>Save</button>
       </div>
 
-      <div style={{ display: 'none' }}>
-        <div id="confirmation" className="modal">
+      <div id="confirmation" className="modal-container" style={{ display: 'none' }}>
+        <div className="modal">
           Employee Created!
           <span className="close" onClick={closeModal}>&times;</span>
         </div>

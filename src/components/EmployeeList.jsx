@@ -62,15 +62,19 @@ function EmployeeList() {
   return (
     <>
         <TitlePage title="Current Employees" />
-        <div className="container">
-        <DataTable
-            columns={columns}
-            data={employees}
-            pagination
-            responsive
-            striped
-        />
-        <Link to="/">Home</Link>
+        <div className="datatable-container">
+
+                <DataTable
+                    columns={columns}
+                    data={employees}
+                    pagination
+                    responsive
+                    striped
+                />
+                
+        <div className="page-link">
+            <Link to="/">Home</Link>
+        </div>
         </div>
     </>
 
