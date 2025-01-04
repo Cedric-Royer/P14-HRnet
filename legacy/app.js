@@ -7,19 +7,23 @@ $( function() {
         stateSelect.appendChild(option);
     });
 
-    //$( "#department" ).selectmenu();
-    //$( "#state" ).selectmenu();
+    /*
+    $( "#department" ).selectmenu();
+    $( "#state" ).selectmenu();
 
     $('#date-of-birth').datetimepicker({
         timepicker: false,
         format: 'm/d/Y'
     });
+
     $('#start-date').datetimepicker({
         timepicker: false,
         format: 'm/d/Y'
     });
+    */
 });
 
+/*
 function saveEmployee() {
     const firstName = document.getElementById('first-name');
     const lastName = document.getElementById('last-name');
@@ -47,6 +51,7 @@ function saveEmployee() {
     localStorage.setItem('employees', JSON.stringify(employees));
     $('#confirmation').modal();
 }
+*/
 
 const states = [
     {
