@@ -1,6 +1,6 @@
 import React from "react"
 
-function TitlePage(props) {
+function HeaderTitle(props) {
     return (
         <div className="title">
           <h1>{props.title}</h1>
@@ -8,4 +8,4 @@ function TitlePage(props) {
     )
   }
   
-  export default TitlePage
+  export default HeaderTitle

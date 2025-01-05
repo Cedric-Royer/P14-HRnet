@@ -85,7 +85,8 @@ form {
     height: 50px;
     position: relative;
     z-index: 2;
-    max-width: 500px;
+    min-width: 400px;
+    text-align: center;
     box-sizing: border-box;
     background: #fff;
     padding: 15px 30px;
@@ -99,7 +100,6 @@ form {
     -o-box-shadow: 0 0 10px #000;
     -ms-box-shadow: 0 0 10px #000;
     box-shadow: 0 0 10px #000;
-    text-align: left;
 }
 
 .modal .close {

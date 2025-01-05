@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TitlePage from "../components/TitlePage";
+import DocumentTitle from "../components/DocumentTitle";
+import HeaderTitle from "../components/HeaderTitle";
 import EmployeeForm from "../components/EmployeeForm";
 
 function CreateEmployee() {
@@ -26,15 +27,14 @@ function CreateEmployee() {
 
   return (
     <>
-      <TitlePage title="HRnet" />
+      <DocumentTitle title="Create Employee | HRnet" />
+      <HeaderTitle title="HRnet" />
       <div className="container">
         <Link to="/employee-list">View Current Employees</Link>
       </div>
 
       <form
-        onSubmit={(event) => {
-          saveEmployee(event);
-        }}
+        onSubmit={saveEmployee}
         className="mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 lg:px-8"
         id="create-employee"
       >

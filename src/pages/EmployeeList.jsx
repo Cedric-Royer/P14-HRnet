@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
-import TitlePage from "../components/TitlePage";
+import DocumentTitle from "../components/DocumentTitle";
+import HeaderTitle from "../components/HeaderTitle";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -61,21 +62,22 @@ function EmployeeList() {
 
   return (
     <>
-        <TitlePage title="Current Employees" />
-        <div className="datatable-container">
+      <DocumentTitle title="Current Employees | HRnet" />
+      <HeaderTitle title="Current Employees" />
+      <div className="datatable-container">
 
-                <DataTable
-                    columns={columns}
-                    data={employees}
-                    pagination
-                    responsive
-                    striped
-                />
-                
-        <div className="page-link">
-            <Link to="/">Home</Link>
-        </div>
-        </div>
+              <DataTable
+                  columns={columns}
+                  data={employees}
+                  pagination
+                  responsive
+                  striped
+              />
+              
+      <div className="page-link">
+          <Link to="/">Home</Link>
+      </div>
+      </div>
     </>
 
   );
