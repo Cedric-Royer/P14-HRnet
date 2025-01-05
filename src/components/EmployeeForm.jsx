@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import LabeledInput from "./FormElements/LabeledInput";
 import LabeledSelect from "./FormElements/LabeledSelect";
-import FormSection from "./FormSection";
+import FormSection from "./FormElements/FormSection";
+import states from "./FormElements/constants/states";
+import departments from "./FormElements/constants/departments";
 
 function EmployeeForm() {
   const [dateOfBirth, setDateOfBirth] = useState(null); 
@@ -42,19 +44,23 @@ function EmployeeForm() {
         <LabeledInput id="city" name="city" label="City" type="text" />
       </div>
       <div className="sm:col-span-2">
-        <LabeledSelect id="state" name="state" label="State" />
+      <LabeledSelect id="state" name="state" label="State">
+          {states.map((state) => (
+            <option key={state.abbreviation} value={state.abbreviation}>
+              {state.name}
+            </option>
+          ))}
+        </LabeledSelect>
       </div>
       <div className="sm:col-span-2">
         <LabeledInput id="zip-code" name="zipCode" label="Zip Code" type="number" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledSelect id="department" name="department" label="Department">
-          <option>Sales</option>
-          <option>Marketing</option>
-          <option>Engineering</option>
-          <option>Human Resources</option>
-          <option>Legal</option>
-        </LabeledSelect>
+      <LabeledSelect id="department" name="department" label="Department">
+        {departments.map((dept) => (
+          <option key={dept}>{dept}</option>
+        ))}
+      </LabeledSelect>
       </div>
     </FormSection>
   );

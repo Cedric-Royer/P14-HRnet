@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TitlePage from "./TitlePage";
-import EmployeeForm from "./EmployeeForm";
+import TitlePage from "../components/TitlePage";
+import EmployeeForm from "../components/EmployeeForm";
 
 function CreateEmployee() {
   function saveEmployee(event) {

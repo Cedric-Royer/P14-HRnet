@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
-import TitlePage from "./TitlePage";
+import TitlePage from "../components/TitlePage";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
