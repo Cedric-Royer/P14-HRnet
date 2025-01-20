@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addEmployee } from "../store/employeeSlice";
 import DocumentTitle from "../components/DocumentTitle";
 import HeaderTitle from "../components/HeaderTitle";
 import EmployeeForm from "../components/EmployeeForm";
 import Modal from "../components/Modal";
-import { saveEmployeeToStorage } from "../utils/employeeUtils";
 
 function CreateEmployee() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
 
   function saveEmployee(event) {
     event.preventDefault();
     const form = event.target.closest("form");
-    saveEmployeeToStorage(form);
+    const formData = new FormData(form);
+    const employee = Object.fromEntries(formData.entries());
+    dispatch(addEmployee(employee)); // Ajoute au store
     setIsModalOpen(true);
   }
 

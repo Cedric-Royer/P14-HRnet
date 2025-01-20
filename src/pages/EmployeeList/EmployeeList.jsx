@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
 import DocumentTitle from "../../components/DocumentTitle";
 import HeaderTitle from "../../components/HeaderTitle";
-import { getEmployeesFromStorage } from "../../utils/employeeUtils";
 import { employeeListColumns } from "./employeeListColumns";
 import { employeeListData } from "./employeeListData";
 
 function EmployeeList() {
-  const [employees, setEmployees] = useState([]);
-
-  useEffect(() => {
-    setEmployees(getEmployeesFromStorage());
-  }, []);
-
+  const employees = useSelector((state) => state.employees.employees);
   const columns = employeeListColumns(employeeListData);
 
   return (
