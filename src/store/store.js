@@ -26,15 +26,3 @@ export const store = configureStore({
 export const persistor = persistStore(store, null, () => {
     migrateEmployeesFromStorageIfNeeded(store.dispatch);
   });
-
-store.subscribe(() => {
-    const state = store.getState();
-    console.log("State du store:", state);
-  });
-
-const state = store.getState();
-try {
-  console.log("État sérialisable:", JSON.stringify(state));
-} catch (error) {
-  console.error("Erreur de sérialisation dans l'état:", error);
-}
