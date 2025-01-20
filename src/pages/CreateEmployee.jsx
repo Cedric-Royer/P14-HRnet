@@ -3,22 +3,16 @@ import { Link } from "react-router-dom";
 import DocumentTitle from "../components/DocumentTitle";
 import HeaderTitle from "../components/HeaderTitle";
 import EmployeeForm from "../components/EmployeeForm";
+import Modal from "../components/Modal";
+import { saveEmployeeToStorage } from "../utils/employeeUtils";
 
 function CreateEmployee() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function saveEmployee(event) {
     event.preventDefault();
-
     const form = event.target.closest("form");
-    const formData = new FormData(form);
-
-    const employee = Object.fromEntries(formData.entries());
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
-
-    employees.push(employee);
-    localStorage.setItem("employees", JSON.stringify(employees));
-
+    saveEmployeeToStorage(form);
     setIsModalOpen(true);
   }
 
@@ -50,16 +44,11 @@ function CreateEmployee() {
         </div>
       </form>
 
-      {isModalOpen && (
-        <div className="modal-container">
-          <div className="modal">
-            Employee Created!
-            <span className="close" onClick={closeModal}>
-              &times;
-            </span>
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        message="Employee Created!"
+      />
     </>
   );
 }
