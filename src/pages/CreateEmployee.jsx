@@ -1,28 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DocumentTitle from "../components/DocumentTitle";
 import HeaderTitle from "../components/HeaderTitle";
 import EmployeeForm from "../components/EmployeeForm";
 
 function CreateEmployee() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   function saveEmployee(event) {
     event.preventDefault();
-  
+
     const form = event.target.closest("form");
     const formData = new FormData(form);
-  
-    const employee = Object.fromEntries(formData.entries()); 
+
+    const employee = Object.fromEntries(formData.entries());
     const employees = JSON.parse(localStorage.getItem("employees")) || [];
-  
+
     employees.push(employee);
     localStorage.setItem("employees", JSON.stringify(employees));
-  
-    document.getElementById("confirmation").style.display = "flex";
+
+    setIsModalOpen(true);
   }
-  
 
   function closeModal() {
-    document.getElementById("confirmation").style.display = "none";
+    setIsModalOpen(false);
   }
 
   return (
@@ -48,14 +49,17 @@ function CreateEmployee() {
           </button>
         </div>
       </form>
-      <div id="confirmation" className="modal-container" style={{ display: "none" }}>
-        <div className="modal">
-          Employee Created!
-          <span className="close" onClick={closeModal}>
-            &times;
-          </span>
+
+      {isModalOpen && (
+        <div className="modal-container">
+          <div className="modal">
+            Employee Created!
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
