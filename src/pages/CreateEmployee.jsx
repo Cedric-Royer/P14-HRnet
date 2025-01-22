@@ -5,7 +5,7 @@ import { addEmployee } from "../store/employeeSlice";
 import DocumentTitle from "../components/DocumentTitle";
 import HeaderTitle from "../components/HeaderTitle";
 import EmployeeForm from "../components/EmployeeForm";
-import Modal from "../components/Modal";
+import Modal from 'react-modal-component-package';
 
 function CreateEmployee() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,12 +47,10 @@ function CreateEmployee() {
           </button>
         </div>
       </form>
-
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        message="Employee Created!"
-      />
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h2>Employee Created!</h2>
+        <button onClick={closeModal}>Close</button>
+      </Modal>
     </>
   );
 }
