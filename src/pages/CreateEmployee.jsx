@@ -49,7 +49,6 @@ function CreateEmployee() {
       </form>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2>Employee Created!</h2>
-        <button onClick={closeModal}>Close</button>
       </Modal>
     </>
   );
