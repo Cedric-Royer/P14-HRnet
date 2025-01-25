@@ -2,14 +2,15 @@ HRnet Refactor
 
 ## Description :
 
-Ce projet a pour objectif de refactoriser une application web interne de gestion des employés, HRnet, initialement développée avec jQuery, vers une architecture React moderne en utilisant Vite. Le code legacy est conservé dans un dossier séparé pour servir de référence durant la refactorisation.
+Ce projet a pour objectif de refactoriser une application web interne de gestion des employés, HRnet, initialement développée avec jQuery, vers une architecture React moderne en utilisant Vite. 
 
-## Structure du projet
+## Application legacy :
 
-- src: Contient le code source de l'application React.
-- legacy: Contient le code source original de l'application HRnet en jQuery.
+Vous pouvez accéder au repo initial à cette adresse:
 
-Le code legacy n'est pas destiné à être exécuté directement. Il est présent à titre de référence pour la refactorisation.
+```
+https://github.com/OpenClassrooms-Student-Center/P12_Front-end/tree/master
+```
 
 ## Installation :
 
