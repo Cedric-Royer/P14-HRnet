@@ -16,7 +16,7 @@ function CreateEmployee() {
     const form = event.target.closest("form");
     const formData = new FormData(form);
     const employee = Object.fromEntries(formData.entries());
-    dispatch(addEmployee(employee)); // Ajoute au store
+    dispatch(addEmployee(employee)); 
     setIsModalOpen(true);
   }
 

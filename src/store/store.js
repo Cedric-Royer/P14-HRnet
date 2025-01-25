@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // Utiliser le localStorage pour persister l'état
+import storage from "redux-persist/lib/storage";
 import employeeReducer from "./employeeSlice";
 import { migrateEmployeesFromStorageIfNeeded } from "../services/employeeMigrationService";
 
