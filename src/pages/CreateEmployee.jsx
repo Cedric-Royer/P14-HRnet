@@ -36,6 +36,7 @@ function CreateEmployee() {
         onSubmit={saveEmployee}
         className="mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4 lg:px-8"
         id="create-employee"
+        autoComplete="off"
       >
         <EmployeeForm />
         <div className="mt-6 flex items-center justify-end gap-x-6">

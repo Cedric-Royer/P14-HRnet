@@ -23,6 +23,7 @@ function LabeledInput({ label, id, name, type, value, onChange }) {
         dateFormat="MM/dd/yyyy"
         placeholderText="MM/DD/YYYY"
         onKeyDown={handleKeyDown}
+        autoComplete="off"
       />
     ) : (
       <input
