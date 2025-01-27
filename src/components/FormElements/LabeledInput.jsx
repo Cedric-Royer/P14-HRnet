@@ -21,6 +21,7 @@ function LabeledInput({ label, id, name, type, value, onChange }) {
         onChange={onChange}
         className={commonInputClasses}
         dateFormat="MM/dd/yyyy"
+        placeholderText="MM/DD/YYYY"
         onKeyDown={handleKeyDown}
       />
     ) : (
