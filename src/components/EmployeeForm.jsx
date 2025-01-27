@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import LabeledInput from "./FormElements/LabeledInput";
+import LabeledTextInput from "./FormElements/LabeledTextInput";
+import LabeledDateInput from "./FormElements/LabeledDateInput";
 import LabeledSelect from "./FormElements/LabeledSelect";
 import FormSection from "./FormElements/FormSection";
 import states from "./FormElements/constants/states";
@@ -12,39 +13,37 @@ function EmployeeForm() {
   return (
     <FormSection title="Create Employee">
       <div className="sm:col-span-3">
-        <LabeledInput id="first-name" name="firstName" label="First Name" type="text" />
+        <LabeledTextInput id="first-name" name="firstName" label="First Name" type="text" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledInput id="last-name" name="lastName" label="Last Name" type="text" />
+        <LabeledTextInput id="last-name" name="lastName" label="Last Name" type="text" />
       </div>
       <div className="sm:col-span-3">
-        <LabeledInput
+        <LabeledDateInput
           id="date-of-birth"
           name="dateOfBirth"
           label="Date of Birth"
-          type="date"
           value={dateOfBirth}
           onChange={(date) => setDateOfBirth(date)}
         />
       </div>
       <div className="sm:col-span-3">
-        <LabeledInput
+        <LabeledDateInput
           id="start-date"
           name="startDate"
           label="Start Date"
-          type="date"
           value={startDate}
           onChange={(date) => setStartDate(date)} 
         />
       </div>
       <div className="col-span-full">
-        <LabeledInput id="street" name="street" label="Street" type="text" />
+        <LabeledTextInput id="street" name="street" label="Street" type="text" />
       </div>
       <div className="sm:col-span-2 sm:col-start-1">
-        <LabeledInput id="city" name="city" label="City" type="text" />
+        <LabeledTextInput id="city" name="city" label="City" type="text" />
       </div>
       <div className="sm:col-span-2">
-      <LabeledSelect id="state" name="state" label="State">
+        <LabeledSelect id="state" name="state" label="State">
           {states.map((state) => (
             <option key={state.abbreviation} value={state.abbreviation}>
               {state.name}
@@ -53,14 +52,14 @@ function EmployeeForm() {
         </LabeledSelect>
       </div>
       <div className="sm:col-span-2">
-        <LabeledInput id="zip-code" name="zipCode" label="Zip Code" type="number" />
+        <LabeledTextInput id="zip-code" name="zipCode" label="Zip Code" type="number" />
       </div>
       <div className="sm:col-span-3">
-      <LabeledSelect id="department" name="department" label="Department">
-        {departments.map((dept) => (
-          <option key={dept}>{dept}</option>
-        ))}
-      </LabeledSelect>
+        <LabeledSelect id="department" name="department" label="Department">
+          {departments.map((dept) => (
+            <option key={dept}>{dept}</option>
+          ))}
+        </LabeledSelect>
       </div>
     </FormSection>
   );
