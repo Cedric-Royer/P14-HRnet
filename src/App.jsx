@@ -6,8 +6,10 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/P14-HRnet">
+    <Router>
       <Routes>
+        <Route path="/P14-HRnet/" element={<CreateEmployee />} />
+        <Route path="/P14-HRnet/employee-list" element={<EmployeeList />} />        
         <Route path="/" element={<CreateEmployee />} />
         <Route path="/employee-list" element={<EmployeeList />} />
       </Routes>
