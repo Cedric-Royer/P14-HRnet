@@ -39,10 +39,7 @@ LabeledDateInput.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.instanceOf(Date),
-    PropTypes.oneOf([null]),
-  ]).isRequired,
+  value: PropTypes.instanceOf(Date),
   onChange: PropTypes.func.isRequired,
 };
 
