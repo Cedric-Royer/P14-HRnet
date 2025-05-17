@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -34,5 +34,16 @@ function LabeledDateInput({ label, id, name, value, onChange, ...props }) {
     </>
   );
 }
+
+LabeledDateInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.instanceOf(Date),
+    PropTypes.oneOf([null]),
+  ]).isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default LabeledDateInput;

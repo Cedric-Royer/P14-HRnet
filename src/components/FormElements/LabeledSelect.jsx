@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 function LabeledSelect({label, id, name, children}) {
     return (
@@ -25,5 +25,11 @@ function LabeledSelect({label, id, name, children}) {
     )
 }
 
+LabeledSelect.propTypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default LabeledSelect

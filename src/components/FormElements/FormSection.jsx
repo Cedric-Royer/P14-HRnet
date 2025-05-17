@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 function FormSection({ children, title }) {
   return (
@@ -10,5 +10,10 @@ function FormSection({ children, title }) {
     </div>
   );
 }
+
+FormSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default FormSection;

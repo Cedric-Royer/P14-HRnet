@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LabeledTextInput from "./FormElements/LabeledTextInput";
 import LabeledDateInput from "./FormElements/LabeledDateInput";
 import LabeledSelect from "./FormElements/LabeledSelect";
@@ -13,10 +13,10 @@ function EmployeeForm() {
   return (
     <FormSection title="Create Employee">
       <div className="sm:col-span-3">
-        <LabeledTextInput id="first-name" name="firstName" label="First Name" type="text" />
+        <LabeledTextInput id="first-name" name="firstName" label="First Name" type="text" required />
       </div>
       <div className="sm:col-span-3">
-        <LabeledTextInput id="last-name" name="lastName" label="Last Name" type="text" />
+        <LabeledTextInput id="last-name" name="lastName" label="Last Name" type="text" required />
       </div>
       <div className="sm:col-span-3">
         <LabeledDateInput
@@ -25,6 +25,7 @@ function EmployeeForm() {
           label="Date of Birth"
           value={dateOfBirth}
           onChange={(date) => setDateOfBirth(date)}
+          required
         />
       </div>
       <div className="sm:col-span-3">
@@ -33,14 +34,15 @@ function EmployeeForm() {
           name="startDate"
           label="Start Date"
           value={startDate}
-          onChange={(date) => setStartDate(date)} 
+          onChange={(date) => setStartDate(date)}
+          required 
         />
       </div>
       <div className="col-span-full">
-        <LabeledTextInput id="street" name="street" label="Street" type="text" />
+        <LabeledTextInput id="street" name="street" label="Street" type="text" required />
       </div>
       <div className="sm:col-span-2 sm:col-start-1">
-        <LabeledTextInput id="city" name="city" label="City" type="text" />
+        <LabeledTextInput id="city" name="city" label="City" type="text" required />
       </div>
       <div className="sm:col-span-2">
         <LabeledSelect id="state" name="state" label="State">
@@ -52,7 +54,7 @@ function EmployeeForm() {
         </LabeledSelect>
       </div>
       <div className="sm:col-span-2">
-        <LabeledTextInput id="zip-code" name="zipCode" label="Zip Code" type="number" />
+        <LabeledTextInput id="zip-code" name="zipCode" label="Zip Code" type="number" required />
       </div>
       <div className="sm:col-span-3">
         <LabeledSelect id="department" name="department" label="Department">

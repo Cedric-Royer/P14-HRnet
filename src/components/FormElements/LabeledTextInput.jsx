@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 function LabeledTextInput({ label, id, name, value, onChange, type = "text", ...props }) {
   const commonInputClasses =
@@ -30,5 +30,14 @@ function LabeledTextInput({ label, id, name, value, onChange, type = "text", ...
     </>
   );
 }
+
+LabeledTextInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  type: PropTypes.string,
+};
 
 export default LabeledTextInput;
