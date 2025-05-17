@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import employeeReducer from "./employeeSlice";
-import { migrateEmployeesFromStorageIfNeeded } from "../services/employeeMigrationService";
 
 const persistConfig = {
   key: "root",
@@ -23,6 +22,4 @@ export const store = configureStore({
   }),
 });
 
-export const persistor = persistStore(store, null, () => {
-    migrateEmployeesFromStorageIfNeeded(store.dispatch);
-  });
+export const persistor = persistStore(store);
